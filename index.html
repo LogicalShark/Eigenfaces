@@ -32,7 +32,7 @@
 			});
 			//Scan and record hue values
 			Jimp.read("images/Layer "+m+".png").then(function (face) {
-				.scan(0, 0, face.bitmap.width, face.bitmap.height, function (x, y, idx) {
+				face.scan(0, 0, face.bitmap.width, face.bitmap.height, function (x, y, idx) {
 					// x, y is the position of this pixel on the image
 					// idx is the position start position of this rgba tuple in the bitmap Buffer
 					// this is the image
