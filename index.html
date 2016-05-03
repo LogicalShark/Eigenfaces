@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="icon" href="images/favicon.ico?v=2" type="image/x-icon">
 <title>Eigenfaces</title>
-<script>
+<script src="bundle.js">
 	function setPixel(imageData, x, y, h, a) {
 	    index = (x + y * imageData.width) * 4;
 	    imageData.data[index+0] = h;
@@ -15,6 +15,7 @@
 	}
 	function combine()
 	{
+		var Jimp = require("jimp");
 		var weights = [];
 		weights[0] = parseInt(document.getElementById("f1").value, 10);
 		weights[1] = parseInt(document.getElementById("f2").value, 10);
@@ -25,7 +26,6 @@
 		var vout = 0;
 		var hues = [0][0];
 		// https://github.com/oliver-moran/jimp
-		 var Jimp = require("jimp");
 		for(var n = 0; n<6; n++)
 		{
 			var m = n+1;
