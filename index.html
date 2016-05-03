@@ -5,6 +5,16 @@
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="icon" href="images/favicon.ico">
 	<title>Eigenfaces</title>
+	<script>
+		function combine()
+		{
+			var v1 = document.getElementById("one").value;
+			var v2 = document.getElementById("two").value;
+			var v3 = document.getElementById("three").value;
+			var vout = (v1+v2+v3)/3;
+			alert(""+vout);
+		}
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -25,9 +35,10 @@
 		<p class="four columns">Face 3</p>
 		</div>
 		<div class="container">
-		<input class="four columns">
-		<input class="four columns">
-		<input class="four columns">
+		<input class="four columns" id="one">
+		<input class="four columns" id="two">
+		<input class="four columns" id="three">
+		<button id="submit" onClick="combine">Submit</button>
 		</div>
 	</div>
 </body>
