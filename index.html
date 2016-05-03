@@ -5,19 +5,6 @@
 <link rel="stylesheet" type="text/css" href="css/normalize.css">
 <link rel="icon" href="images/favicon.ico">
 	<title>Eigenfaces</title>
-	<script>
-		function combine()
-		{
-			var v1 = document.getElementById("f1").value;
-			var v2 = document.getElementById("f2").value;
-			var v3 = document.getElementById("f3").value;
-			var v4 = document.getElementById("f4").value;
-			var v5 = document.getElementById("f5").value;
-			var v6 = document.getElementById("f6").value;
-			var vout = (v1+v2+v3+v4+v5+v6)/6;
-			console.log(vout);
-		}
-	</script>
 </head>
 <body>
 	<div class="container">
@@ -53,5 +40,18 @@
 		</div>
 		<button id="submit" onclick="combine()">Submit</button>
 	</div>
+	<script>
+		function combine()
+		{
+			var v1 = document.getElementById("f1").value;
+			var v2 = document.getElementById("f2").value;
+			var v3 = document.getElementById("f3").value;
+			var v4 = document.getElementById("f4").value;
+			var v5 = document.getElementById("f5").value;
+			var v6 = document.getElementById("f6").value;
+			var vout = (v1+v2+v3+v4+v5+v6)/6;
+			console.log(vout);
+		}
+	</script>
 </body>
 </html>
