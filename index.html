@@ -49,27 +49,25 @@
 			console.error(err);
 			});
 		}
-		var image = new Jimp(256, 256, function (err, image) {
-			
-		});
+		
 		// c1 = document.createElement("canvas");
 		// cx1 = c1.getContext("2d");
 		// cx1.drawImage("images/Layer 1");
 		// d = cx1.getImageData(0, 0, cx1.width, cx1.height).data;
 
-		// canvas = document.getElementById("canvas");
-		// cx = canvas.getContext("2d");
-		// w = cx.width;
-		// h = cx.height;
-		// imageData = cx.createImageData(w,h);
-		// for (x = 0; x< w; x++) 
-		// {
-		// 	for(y = 0; y<h; y++)
-		// 	{
-		// 		setPixel(x, y, hue[x][y], 255)
-		// 	}
-		// }
-		// cx.putImageData(imageData, 0, 0);
+		canvas = document.getElementById("canvas");
+		cx = canvas.getContext("2d");
+		w = cx.width;
+		h = cx.height;
+		imageData = cx.createImageData(w,h);
+		for (x = 0; x< w; x++) 
+		{
+			for(y = 0; y<h; y++)
+			{
+				setPixel(x, y, hue[x][y], 255)
+			}
+		}
+		cx.putImageData(imageData, 0, 0);
 	}
 </script>
 </head>
