@@ -6,6 +6,13 @@
 <link rel="icon" href="images/favicon.ico?v=2" type="image/x-icon">
 <title>Eigenfaces</title>
 <script>
+	function setPixel(imageData, x, y, h, a) {
+	    index = (x + y * imageData.width) * 4;
+	    imageData.data[index+0] = h;
+	    imageData.data[index+1] = h;
+	    imageData.data[index+2] = h;
+	    imageData.data[index+3] = a;
+	}
 	function combine()
 	{
 		var weights = [];
@@ -18,7 +25,7 @@
 		var vout = 0;
 		var hues = [0][0];
 		// https://github.com/oliver-moran/jimp
-		var Jimp = require("jimp");
+		 var Jimp = require("jimp");
 		for(var n = 0; n<6; n++)
 		{
 			var m = n+1;
@@ -45,8 +52,24 @@
 		var image = new Jimp(256, 256, function (err, image) {
 			
 		});
-		vout = vout/6;
-		console.log(vout);
+		// c1 = document.createElement("canvas");
+		// cx1 = c1.getContext("2d");
+		// cx1.drawImage("images/Layer 1");
+		// d = cx1.getImageData(0, 0, cx1.width, cx1.height).data;
+
+		// canvas = document.getElementById("canvas");
+		// cx = canvas.getContext("2d");
+		// w = cx.width;
+		// h = cx.height;
+		// imageData = cx.createImageData(w,h);
+		// for (x = 0; x< w; x++) 
+		// {
+		// 	for(y = 0; y<h; y++)
+		// 	{
+		// 		setPixel(x, y, hue[x][y], 255)
+		// 	}
+		// }
+		// cx.putImageData(imageData, 0, 0);
 	}
 </script>
 </head>
@@ -84,6 +107,7 @@
 		</div>
 		<div class-"container">
 			<button id="submit" onclick="combine()">Submit</button>
+			<cavnas id="canvas" width="256" height="256"></cavnas>
 		</div>
 	</div>
 </body>
