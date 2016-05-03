@@ -8,10 +8,13 @@
 	<script>
 		function combine()
 		{
-			var v1 = document.getElementById("one").value;
-			var v2 = document.getElementById("two").value;
-			var v3 = document.getElementById("three").value;
-			var vout = (v1+v2+v3)/3;
+			var v1 = document.getElementById("f1").value;
+			var v2 = document.getElementById("f2").value;
+			var v3 = document.getElementById("f3").value;
+			var v4 = document.getElementById("f4").value;
+			var v5 = document.getElementById("f5").value;
+			var v6 = document.getElementById("f6").value;
+			var vout = (v1+v2+v3+v4+v5+v6)/6;
 			alert(""+vout);
 		}
 	</script>
@@ -23,22 +26,31 @@
 		<a href="background.html">What are eigenfaces?</a>
 		<br>
 		<a href="http://www.vision.jhu.edu/teaching/vision08/Handouts/case_study_pca1.pdf">How did we make this?</a>
-		<br>
+		<br><br>
 		<div class="container">
-		<img class="four columns" src="images/Layer 1.png">
-		<img class="four columns" src="images/Layer 4.png">
-		<img class="four columns" src="images/Layer 7.png">
+		<img class="two columns" src="images/Layer 1.png">
+		<img class="two columns" src="images/Layer 2.png">
+		<img class="two columns" src="images/Layer 4.png">
+		<img class="two columns" src="images/Layer 5.png">
+		<img class="two columns" src="images/Layer 7.png">
+		<img class="two columns" src="images/Layer 8.png">
 		</div>
 		<div class="container">
-		<p class="four columns">Face 1</p>
-		<p class="four columns">Face 2</p>
-		<p class="four columns">Face 3</p>
+		<p class="two columns">Face 1</p>
+		<p class="two columns">Face 2</p>
+		<p class="two columns">Face 3</p>
+		<p class="two columns">Face 4</p>
+		<p class="two columns">Face 5</p>
+		<p class="two columns">Face 6</p>
 		</div>
 		<div class="container">
-		<input class="four columns" id="one">
-		<input class="four columns" id="two">
-		<input class="four columns" id="three">
-		<button id="submit" onClick="combine">Submit</button>
+		<input class="two columns" id="f1">
+		<input class="two columns" id="f2">
+		<input class="two columns" id="f3">
+		<input class="two columns" id="f4">
+		<input class="two columns" id="f5">
+		<input class="two columns" id="f5">
+		<button class="two columns" id="submit" onClick="combine">Submit</button>
 		</div>
 	</div>
 </body>
