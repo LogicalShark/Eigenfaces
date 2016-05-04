@@ -44,7 +44,7 @@ function combine()
 	
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
-	cx.drawImage("images/Layer 1",128,128);
+	cx.drawImage(document.getElementById("face1"),128,128);
 	d = cx.getImageData(0, 0, cx.width, cx.height);
 	for (x = 0; x<d.width; x++) 
 	{
@@ -56,7 +56,7 @@ function combine()
 	}
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
-	cx.drawImage("images/Layer 2",128,128);
+	cx.drawImage(document.getElementById("face2"),128,128);
 	d = cx.getImageData(0, 0, cx.width, cx.height);
 	for (x = 0; x<d.width; x++) 
 	{
@@ -75,7 +75,7 @@ function combine()
 	{
 		for(y = 0; y<h; y++)
 		{
-			setPixel(imageData, x, y, (int)(hue[x][y]/6), 255)
+			setPixel(imageData, x, y, (int)(hue[x][y]/2), 255)
 		}
 	}
 	cx.putImageData(imageData, 0, 0);
