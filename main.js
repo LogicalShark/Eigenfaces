@@ -44,7 +44,7 @@ function combine()
 	
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
-	cx.drawImage("images/Layer 1");
+	cx.drawImage("images/Layer 1",128,128);
 	d = cx.getImageData(0, 0, cx.width, cx.height);
 	for (x = 0; x<d.width; x++) 
 	{
@@ -54,7 +54,18 @@ function combine()
 			hue[x][y]+=d.data[index];
 		}
 	}
-	
+	c = document.createElement("canvas");
+	cx = c.getContext("2d");
+	cx.drawImage("images/Layer 2",128,128);
+	d = cx.getImageData(0, 0, cx.width, cx.height);
+	for (x = 0; x<d.width; x++) 
+	{
+		for(y = 0; y<d.height; y++)
+		{
+			index = (x + y * d.width) * 4;
+			hue[x][y]+=d.data[index];
+		}
+	}
 	canvas = document.getElementById("canvas");
 	cx = canvas.getContext("2d");
 	imageData = cx.createImageData(256,256);
