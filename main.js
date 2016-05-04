@@ -18,45 +18,53 @@ function combine()
 	console.log("asdf");
 	var hues = [0][0];
 	// https://github.com/oliver-moran/jimp
-	for(var n = 0; n<6; n++)
+	// for(var n = 0; n<6; n++)
+	// {
+	// 	var m = n+1;
+	// 	//Resize and quality all
+	// 	Jimp.read("images/Layer "+m+".png").then(function (face) {
+	// 		face.resize(256, 256)            // resize
+	// 		.quality(60)                 // set JPEG quality
+	// 		.write("images/Layer "+m+".png"); // save
+	// 		}).catch(function (err) {
+	// 	console.error(err);
+	// 	});
+	// 	//Scan and record hue values
+	// 	Jimp.read("images/Layer "+m+".png").then(function (face) {
+	// 		face.scan(0, 0, face.bitmap.width, face.bitmap.height, function (x, y, idx) {
+	// 			// x, y is the position of this pixel on the image
+	// 			// idx is the position start position of this rgba tuple in the bitmap Buffer
+	// 			// this is the image
+	// 			hues[x][y] += this.bitmap.data[idx]*weights[n];
+	// 		})
+	// 		}).catch(function (err) {
+	// 	console.error(err);
+	// 	});
+	// }
+	
+	c = document.createElement("canvas");
+	cx = c.getContext("2d");
+	cx.drawImage("images/Layer 1");
+	d = cx.getImageData(0, 0, cx.width, cx.height);
+	for (x = 0; x<d.width; x++) 
 	{
-		var m = n+1;
-		//Resize and quality all
-		Jimp.read("images/Layer "+m+".png").then(function (face) {
-			face.resize(256, 256)            // resize
-			.quality(60)                 // set JPEG quality
-			.write("images/Layer "+m+".png"); // save
-			}).catch(function (err) {
-		console.error(err);
-		});
-		//Scan and record hue values
-		Jimp.read("images/Layer "+m+".png").then(function (face) {
-			face.scan(0, 0, face.bitmap.width, face.bitmap.height, function (x, y, idx) {
-				// x, y is the position of this pixel on the image
-				// idx is the position start position of this rgba tuple in the bitmap Buffer
-				// this is the image
-				hues[x][y] += this.bitmap.data[idx]*weights[n];
-			})
-			}).catch(function (err) {
-		console.error(err);
-		});
+		for(y = 0; y<d.height; y++)
+		{
+			index = (x + y * d.width) * 4;
+			hue[x][y]+=d.data[index];
+		}
 	}
 	
-	// c1 = document.createElement("canvas");
-	// cx1 = c1.getContext("2d");
-	// cx1.drawImage("images/Layer 1");
-	// d = cx1.getImageData(0, 0, cx1.width, cx1.height).data;
-
 	canvas = document.getElementById("canvas");
 	cx = canvas.getContext("2d");
+	imageData = cx.createImageData(256,256);
 	w = cx.width;
 	h = cx.height;
-	imageData = cx.createImageData(w,h);
 	for (x = 0; x< w; x++) 
 	{
 		for(y = 0; y<h; y++)
 		{
-			setPixel(x, y, hue[x][y], 255)
+			setPixel(imageData, x, y, (int)(hue[x][y]/6), 255)
 		}
 	}
 	cx.putImageData(imageData, 0, 0);
