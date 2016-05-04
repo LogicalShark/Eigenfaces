@@ -8,6 +8,7 @@ function setPixel(imageData, x, y, h, a) {
 function combine()
 {
 	var weights = [];
+	var size = 128;
 	weights[0] = parseInt(document.getElementById("f1").value, 10);
 	weights[1] = parseInt(document.getElementById("f2").value, 10);
 	weights[2] = parseInt(document.getElementById("f3").value, 10);
@@ -15,7 +16,14 @@ function combine()
 	weights[4] = parseInt(document.getElementById("f5").value, 10);
 	weights[5] = parseInt(document.getElementById("f6").value, 10);
 	var vout = 0;
-	var hues = [0][0];
+	var hues = [];
+	for(x = 0; x<size; x++)
+	{
+		for(y = 0; y<size; y++)
+		{
+			hues[x][y] = 0;
+		}
+	}
 	// https://github.com/oliver-moran/jimp
 	// for(var n = 0; n<6; n++)
 	// {
@@ -43,8 +51,8 @@ function combine()
 	
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
-	cx.drawImage(document.getElementById("face1"),128,128);
-	d = cx.getImageData(0, 0, 128, 128);
+	cx.drawImage(document.getElementById("face1"), size, size);
+	d = cx.getImageData(0, 0, size, size);
 	for (x = 0; x<d.width; x++) 
 	{
 		for(y = 0; y<d.height; y++)
@@ -55,8 +63,8 @@ function combine()
 	}
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
-	cx.drawImage(document.getElementById("face2"),128,128);
-	d = cx.getImageData(0, 0, 128, 128);
+	cx.drawImage(document.getElementById("face2"), size, size);
+	d = cx.getImageData(0, 0, size, size);
 	for (x = 0; x<d.width; x++) 
 	{
 		for(y = 0; y<d.height; y++)
@@ -67,7 +75,7 @@ function combine()
 	}
 	canvas = document.getElementById("canvas");
 	cx = canvas.getContext("2d");
-	imageData = cx.createImageData(256,256);
+	imageData = cx.createImageData(size, size);
 	w = cx.width;
 	h = cx.height;
 	for (x = 0; x< w; x++) 
