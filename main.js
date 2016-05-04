@@ -50,7 +50,7 @@ function combine()
 		for(y = 0; y<d.height; y++)
 		{
 			index = (x + y * d.width) * 4;
-			hue[x][y]+=d.data[index];
+			hues[x][y]+=d.data[index];
 		}
 	}
 	c = document.createElement("canvas");
@@ -62,7 +62,7 @@ function combine()
 		for(y = 0; y<d.height; y++)
 		{
 			index = (x + y * d.width) * 4;
-			hue[x][y]+=d.data[index];
+			hues[x][y]+=d.data[index];
 		}
 	}
 	canvas = document.getElementById("canvas");
@@ -74,7 +74,7 @@ function combine()
 	{
 		for(y = 0; y<h; y++)
 		{
-			setPixel(imageData, x, y, (int)(hue[x][y]/2), 255)
+			setPixel(imageData, x, y, (int)(hues[x][y]/2), 255)
 		}
 	}
 	cx.putImageData(imageData, 0, 0);
