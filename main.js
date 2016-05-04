@@ -15,7 +15,6 @@ function combine()
 	weights[4] = parseInt(document.getElementById("f5").value, 10);
 	weights[5] = parseInt(document.getElementById("f6").value, 10);
 	var vout = 0;
-	console.log("asdf");
 	var hues = [0][0];
 	// https://github.com/oliver-moran/jimp
 	// for(var n = 0; n<6; n++)
