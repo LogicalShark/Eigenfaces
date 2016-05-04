@@ -44,7 +44,7 @@ function combine()
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face1"),128,128);
-	d = cx.getImageData(0, 0, cx.width, cx.height);
+	d = cx.getImageData(0, 0, c.width, c.height);
 	for (x = 0; x<d.width; x++) 
 	{
 		for(y = 0; y<d.height; y++)
@@ -56,7 +56,7 @@ function combine()
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face2"),128,128);
-	d = cx.getImageData(0, 0, cx.width, cx.height);
+	d = cx.getImageData(0, 0, c.width, c.height);
 	for (x = 0; x<d.width; x++) 
 	{
 		for(y = 0; y<d.height; y++)
