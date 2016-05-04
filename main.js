@@ -79,9 +79,10 @@ function combine()
 	{
 		for(y = 0; y<h; y++)
 		{
+			console.log(""+hues[x][y]);
 			setPixel(imageData, x, y, (int)(hues[x][y]/2), 255)
+			cx.putImageData(imageData, x, y);
 		}
 	}
-	cx.putImageData(imageData, 0, 0);
 }
 
