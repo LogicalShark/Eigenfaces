@@ -70,7 +70,7 @@ function combine()
 			hues[x][y]+=d.data[index];
 		}
 	}
-	canv = document.getElementById("canvas");
+	canv = document.createElement("canvas");
 	cx = canv.getContext("2d");
 	imageData = cx.createImageData(size, size);
 	w = cx.width;
