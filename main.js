@@ -16,7 +16,7 @@ function combine()
 	weights[4] = parseInt(document.getElementById("f5").value, 10);
 	weights[5] = parseInt(document.getElementById("f6").value, 10);
 	var vout = 0;
-	var hues = [];
+	var hues = [][];
 	for(x = 0; x<size; x++)
 	{
 		for(y = 0; y<size; y++)
