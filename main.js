@@ -19,6 +19,7 @@ function combine()
 	var hues = [];
 	for(x = 0; x<size; x++)
 	{
+		hues[x] = [0];
 		for(y = 0; y<size; y++)
 		{
 			hues[x][y] = 0;
