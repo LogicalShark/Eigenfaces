@@ -135,7 +135,7 @@ function combine()
 	{
 		for(y = 0; y<size; y++)
 		{
-			setPixel(imageData, x, y, parseInt(hues[x][y], 10), 255)
+			setPixel(imageData, x, y, parseInt(hues[y][x], 10), 255)
 		}
 	}
 	console.log("asdf");
