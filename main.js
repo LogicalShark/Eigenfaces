@@ -52,7 +52,7 @@ function combine()
 	
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
-	cx.drawImage(document.getElementById("face1"), size, size);
+	cx.drawImage(document.getElementById("face1"), 0, 0, size, size);
 	d = cx.getImageData(0,0,size,size);
 	document.body.appendChild(c);
 	for (x = 0; x<size; x++) 
@@ -66,7 +66,7 @@ function combine()
 	}
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
-	cx.drawImage(document.getElementById("face1"), size, size);
+	cx.drawImage(document.getElementById("face1"), 0, 0, size, size);
 	d = cx.getImageData(0,0,size,size);
 	for (x = 0; x<size; x++) 
 	{
