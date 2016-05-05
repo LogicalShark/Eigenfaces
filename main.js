@@ -19,7 +19,10 @@ function combine()
 	var hues = [];
 	for(x = 0; x<size; x++)
 	{
-		hues[x] = [0];
+		for(y = 0; y<size; y++)
+		{
+			hues[x][y] = 0;
+		}
 	}
 	// https://github.com/oliver-moran/jimp
 	// for(var n = 0; n<6; n++)
@@ -50,12 +53,13 @@ function combine()
 	cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face1"), size, size);
 	d = cx.getImageData(0, 0, size, size);
-	for (x = 0; x<d.width; x++) 
+	for (x = 0; x<size; x++) 
 	{
-		for(y = 0; y<d.height; y++)
+		for(y = 0; y<size; y++)
 		{
-			index = (x + y * d.width) * 4;
+			index = (x + y * size) * 4;
 			hues[x][y]+=d.data[index];
+			console.log(""+d.data[index]);
 		}
 	}
 	c = document.createElement("canvas");
