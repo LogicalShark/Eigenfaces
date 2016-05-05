@@ -75,13 +75,13 @@ function combine()
 	imageData = cx.createImageData(size, size);
 	w = cx.width;
 	h = cx.height;
+	console.log("asdf");
 	for (x = 0; x< w; x++) 
 	{
 		for(y = 0; y<h; y++)
 		{
 			console.log(""+hues[x][y]);
 			setPixel(imageData, x, y, (int)(hues[x][y]/2), 255)
-			console.log(hues[x][y]/6);
 		}
 	}
 	cx.putImageData(imageData, 0, 0);
