@@ -73,17 +73,15 @@ function combine()
 	canv = document.createElement("canvas");
 	cx = canv.getContext("2d");
 	imageData = cx.createImageData(size, size);
-	w = canv.width;
-	h = canv.height;
-	for (x = 0; x< w; x++) 
+	for (x = 0; x<size; x++) 
 	{
-		// console.log("asdf");
-		for(y = 0; y<h; y++)
+		for(y = 0; y<size; y++)
 		{
-			// console.log(""+hues[x][y]);
+			console.log(""+hues[x][y]);
 			setPixel(imageData, x, y, parseInt(hues[x][y]/2, 10), 255)
 		}
 	}
+	console.log("asdf");
 	cx.putImageData(imageData, 0, 0);
 }
 
