@@ -53,12 +53,13 @@ function combine()
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face1"), size, size);
+	d = cx.getImageData(0,0,size,size);
 	for (x = 0; x<size; x++) 
 	{
 		for(y = 0; y<size; y++)
 		{
-			d = cx.getImageData(x, y, x+1, y+1);
-			hues[x][y]+=d.data[0];
+			index = ((x*(imageData.width*4)) + (y*4)) + 2;
+			hues[x][y]+=d.data[index];
 			// console.log(""+d.data[0]);
 		}
 	}
@@ -81,7 +82,7 @@ function combine()
 	{
 		for(y = 0; y<size; y++)
 		{
-			console.log(x + " "+hues[x][y]);
+			// console.log(x + " "+hues[x][y]);
 			setPixel(imageData, x, y, parseInt(hues[x][y]/2, 10), 255)
 		}
 	}
