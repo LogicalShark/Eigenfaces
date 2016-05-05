@@ -77,11 +77,11 @@ function combine()
 	h = canv.height;
 	for (x = 0; x< w; x++) 
 	{
-		console.log("asdf");
+		// console.log("asdf");
 		for(y = 0; y<h; y++)
 		{
-			console.log(""+hues[x][y]);
-			setPixel(imageData, x, y, (int)(hues[x][y]/2), 255)
+			// console.log(""+hues[x][y]);
+			setPixel(imageData, x, y, parseInt(hues[x][y]/2, 10), 255)
 		}
 	}
 	cx.putImageData(imageData, 0, 0);
