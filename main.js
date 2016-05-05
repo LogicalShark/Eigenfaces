@@ -60,7 +60,7 @@ function combine()
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=weight*d.data[index];
+			hues[x][y]+=parseFloat(weight)*d.data[index];
 		}
 	}
 	var c = document.createElement("canvas");
@@ -73,7 +73,7 @@ function combine()
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=weight*d.data[index];
+			hues[x][y]+=parseFloat(weight)*d.data[index];
 		}
 	}
 		var c = document.createElement("canvas");
@@ -86,10 +86,10 @@ function combine()
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=weight*d.data[index];
+			hues[x][y]+=parseFloat(weight)*d.data[index];
 		}
 	}
-		var c = document.createElement("canvas");
+	var c = document.createElement("canvas");
 	var cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face4"), 0, 0, size, size);
 	var d = cx.getImageData(0,0,size,size);
@@ -99,10 +99,10 @@ function combine()
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=weight*d.data[index];
+			hues[x][y]+=parseFloat(weight)*d.data[index];
 		}
 	}
-		var c = document.createElement("canvas");
+	var c = document.createElement("canvas");
 	var cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face5"), 0, 0, size, size);
 	var d = cx.getImageData(0,0,size,size);
@@ -112,10 +112,10 @@ function combine()
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=weight*d.data[index];
+			hues[x][y]+=parseFloat(weight)*d.data[index];
 		}
 	}
-		var c = document.createElement("canvas");
+	var c = document.createElement("canvas");
 	var cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face6"), 0, 0, size, size);
 	var d = cx.getImageData(0,0,size,size);
@@ -125,7 +125,7 @@ function combine()
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=weight*d.data[index];
+			hues[x][y]+=parseFloat(weight)*d.data[index];
 		}
 	}
 	canv = document.createElement("canvas");
@@ -135,7 +135,6 @@ function combine()
 	{
 		for(y = 0; y<size; y++)
 		{
-			// console.log(x + " "+hues[x][y]);
 			setPixel(imageData, x, y, parseInt(hues[x][y], 10), 255)
 		}
 	}
