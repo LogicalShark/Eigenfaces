@@ -53,26 +53,25 @@ function combine()
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face1"), size, size);
-	d = cx.getImageData(0, 0, size, size);
 	for (x = 0; x<size; x++) 
 	{
 		for(y = 0; y<size; y++)
 		{
-			index = (x + y * size) * 4;
-			hues[x][y]+=d.data[index];
-			console.log(""+d.data[index]);
+			d = cx.getImageData(x, y, x, y);
+			hues[x][y]+=d.data[0];
+			// console.log(""+d.data[0]);
 		}
 	}
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face2"), size, size);
-	d = cx.getImageData(0, 0, size, size);
-	for (x = 0; x<d.width; x++) 
+	for (x = 0; x<size; x++) 
 	{
-		for(y = 0; y<d.height; y++)
+		for(y = 0; y<size; y++)
 		{
-			index = (x + y * d.width) * 4;
-			hues[x][y]+=d.data[index];
+			d = cx.getImageData(x, y, x, y);
+			hues[x][y]+=d.data[0];
+			// console.log(""+d.data[0]);
 		}
 	}
 	canv = document.createElement("canvas");
