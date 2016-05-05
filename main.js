@@ -50,31 +50,82 @@ function combine()
 	// 	});
 	// }
 	
-	c = document.createElement("canvas");
-	cx = c.getContext("2d");
+	var c = document.createElement("canvas");
+	var cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face1"), 0, 0, size, size);
-	d = cx.getImageData(0,0,size,size);
-	document.body.appendChild(c);
+	var d = cx.getImageData(0,0,size,size);
+	var weight = document.getElementById("f1").value;
 	for (x = 0; x<size; x++) 
 	{
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=d.data[index];
-			console.log(""+d.data[index]);
+			hues[x][y]+=weight*d.data[index];
 		}
 	}
-	c = document.createElement("canvas");
-	cx = c.getContext("2d");
-	cx.drawImage(document.getElementById("face1"), 0, 0, size, size);
-	d = cx.getImageData(0,0,size,size);
+	var c = document.createElement("canvas");
+	var cx = c.getContext("2d");
+	cx.drawImage(document.getElementById("face2"), 0, 0, size, size);
+	var d = cx.getImageData(0,0,size,size);
+	var weight = document.getElementById("f2").value;
 	for (x = 0; x<size; x++) 
 	{
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=d.data[index];
-			// console.log(""+d.data[0]);
+			hues[x][y]+=weight*d.data[index];
+		}
+	}
+		var c = document.createElement("canvas");
+	var cx = c.getContext("2d");
+	cx.drawImage(document.getElementById("face3"), 0, 0, size, size);
+	var d = cx.getImageData(0,0,size,size);
+	var weight = document.getElementById("f3").value;
+	for (x = 0; x<size; x++) 
+	{
+		for(y = 0; y<size; y++)
+		{
+			index = ((x*(d.width*4)) + (y*4)) + 2;
+			hues[x][y]+=weight*d.data[index];
+		}
+	}
+		var c = document.createElement("canvas");
+	var cx = c.getContext("2d");
+	cx.drawImage(document.getElementById("face4"), 0, 0, size, size);
+	var d = cx.getImageData(0,0,size,size);
+	var weight = document.getElementById("f4").value;
+	for (x = 0; x<size; x++) 
+	{
+		for(y = 0; y<size; y++)
+		{
+			index = ((x*(d.width*4)) + (y*4)) + 2;
+			hues[x][y]+=weight*d.data[index];
+		}
+	}
+		var c = document.createElement("canvas");
+	var cx = c.getContext("2d");
+	cx.drawImage(document.getElementById("face5"), 0, 0, size, size);
+	var d = cx.getImageData(0,0,size,size);
+	var weight = document.getElementById("f5").value;
+	for (x = 0; x<size; x++) 
+	{
+		for(y = 0; y<size; y++)
+		{
+			index = ((x*(d.width*4)) + (y*4)) + 2;
+			hues[x][y]+=weight*d.data[index];
+		}
+	}
+		var c = document.createElement("canvas");
+	var cx = c.getContext("2d");
+	cx.drawImage(document.getElementById("face6"), 0, 0, size, size);
+	var d = cx.getImageData(0,0,size,size);
+	var weight = document.getElementById("f6").value;
+	for (x = 0; x<size; x++) 
+	{
+		for(y = 0; y<size; y++)
+		{
+			index = ((x*(d.width*4)) + (y*4)) + 2;
+			hues[x][y]+=weight*d.data[index];
 		}
 	}
 	canv = document.createElement("canvas");
@@ -85,7 +136,7 @@ function combine()
 		for(y = 0; y<size; y++)
 		{
 			// console.log(x + " "+hues[x][y]);
-			setPixel(imageData, x, y, parseInt(hues[x][y]/2, 10), 255)
+			setPixel(imageData, x, y, parseInt(hues[x][y], 10), 255)
 		}
 	}
 	console.log("asdf");
