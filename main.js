@@ -71,7 +71,7 @@ function combine()
 		{
 			d = cx.getImageData(x, y, x+1, y+1);
 			hues[x][y]+=d.data[0];
-			// console.log(""+d.data[0]);
+			console.log(""+d.data[0]);
 		}
 	}
 	canv = document.createElement("canvas");
