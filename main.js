@@ -58,21 +58,22 @@ function combine()
 	{
 		for(y = 0; y<size; y++)
 		{
-			index = ((x*(imageData.width*4)) + (y*4)) + 2;
+			index = ((x*(d.width*4)) + (y*4)) + 2;
 			hues[x][y]+=d.data[index];
 			// console.log(""+d.data[0]);
 		}
 	}
 	c = document.createElement("canvas");
 	cx = c.getContext("2d");
-	cx.drawImage(document.getElementById("face2"), size, size);
+	cx.drawImage(document.getElementById("face1"), size, size);
+	d = cx.getImageData(0,0,size,size);
 	for (x = 0; x<size; x++) 
 	{
 		for(y = 0; y<size; y++)
 		{
-			d = cx.getImageData(x, y, x+1, y+1);
-			hues[x][y]+=d.data[0];
-			console.log(""+d.data[0]);
+			index = ((x*(d.width*4)) + (y*4)) + 2;
+			hues[x][y]+=d.data[index];
+			// console.log(""+d.data[0]);
 		}
 	}
 	canv = document.createElement("canvas");
