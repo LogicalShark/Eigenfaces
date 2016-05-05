@@ -81,7 +81,7 @@ function combine()
 	{
 		for(y = 0; y<size; y++)
 		{
-			// console.log(x + " "+hues[x][y]);
+			console.log(x + " "+hues[x][y]);
 			setPixel(imageData, x, y, parseInt(hues[x][y]/2, 10), 255)
 		}
 	}
