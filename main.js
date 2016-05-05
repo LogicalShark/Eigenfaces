@@ -57,7 +57,7 @@ function combine()
 	{
 		for(y = 0; y<size; y++)
 		{
-			d = cx.getImageData(x, y, x, y);
+			d = cx.getImageData(x, y, x+1, y+1);
 			hues[x][y]+=d.data[0];
 			// console.log(""+d.data[0]);
 		}
