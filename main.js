@@ -54,13 +54,14 @@ function combine()
 	cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face1"), size, size);
 	d = cx.getImageData(0,0,size,size);
+	document.body.appendChild(c);
 	for (x = 0; x<size; x++) 
 	{
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
 			hues[x][y]+=d.data[index];
-			// console.log(""+d.data[0]);
+			console.log(""+d.data[index]);
 		}
 	}
 	c = document.createElement("canvas");
