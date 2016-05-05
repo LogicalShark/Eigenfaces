@@ -73,11 +73,11 @@ function combine()
 	canv = document.createElement("canvas");
 	cx = canv.getContext("2d");
 	imageData = cx.createImageData(size, size);
-	w = cx.width;
-	h = cx.height;
-	console.log("asdf");
+	w = canv.width;
+	h = canv.height;
 	for (x = 0; x< w; x++) 
 	{
+		console.log("asdf");
 		for(y = 0; y<h; y++)
 		{
 			console.log(""+hues[x][y]);
