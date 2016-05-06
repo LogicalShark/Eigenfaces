@@ -8,14 +8,14 @@ function setPixel(imageData, x, y, h, a) {
 function combine()
 {
 	var weights = [];
-	weights[0] = parseInt(document.getElementById("f1").value, 10);
-	weights[1] = parseInt(document.getElementById("f2").value, 10);
-	weights[2] = parseInt(document.getElementById("f3").value, 10);
-	weights[3] = parseInt(document.getElementById("f4").value, 10);
-	weights[4] = parseInt(document.getElementById("f5").value, 10);
-	weights[5] = parseInt(document.getElementById("f6").value, 10);
-	weights[4] = parseInt(document.getElementById("f7").value, 10);
-	weights[5] = parseInt(document.getElementById("f8").value, 10);
+	weights[0] = document.getElementById("f1").value;
+	weights[1] = document.getElementById("f2").value;
+	weights[2] = document.getElementById("f3").value;
+	weights[3] = document.getElementById("f4").value;
+	weights[4] = document.getElementById("f5").value;
+	weights[5] = document.getElementById("f6").value;
+	weights[4] = document.getElementById("f7").value;
+	weights[5] = document.getElementById("f8").value;
 	makeFace(weights);
 }
 function randomWeights()
