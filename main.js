@@ -14,8 +14,8 @@ function combine()
 	weights[3] = document.getElementById("f4").value;
 	weights[4] = document.getElementById("f5").value;
 	weights[5] = document.getElementById("f6").value;
-	weights[4] = document.getElementById("f7").value;
-	weights[5] = document.getElementById("f8").value;
+	weights[6] = document.getElementById("f7").value;
+	weights[7] = document.getElementById("f8").value;
 	makeFace(weights);
 }
 function randomWeights()
