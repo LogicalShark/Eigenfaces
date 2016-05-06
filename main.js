@@ -18,7 +18,7 @@ function combine()
 	weights[5] = parseInt(document.getElementById("f8").value, 10);
 	makeFace(weights);
 }
-function random()
+function randomWeights()
 {
 	var weights = [];
 	var x;
