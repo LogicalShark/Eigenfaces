@@ -114,7 +114,6 @@ function combine()
 			setPixel(imageData, x, y, parseInt(hues[y][x], 10), 255)
 		}
 	}
-	console.log("asdf");
 	cx.putImageData(imageData, 0, 0);
 	document.body.appendChild(canv);
 }
