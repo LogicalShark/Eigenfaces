@@ -21,7 +21,8 @@ function combine()
 function random()
 {
 	var weights = [];
-	for(var x = 0; x<8; x++)
+	var x;
+	for(x = 0; x<8; x++)
 	{
 		weights[x] = 2 * (random() - 0.5);
 	}
