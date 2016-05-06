@@ -25,6 +25,7 @@ function randomWeights()
 	for(x = 0; x<8; x++)
 	{
 		weights[x] =  Math.sqrt(Math.sqrt(Math.random() - 0.5));
+		console.log(""+weights[x]);
 	}
 	makeFace(weights);	
 }
@@ -53,26 +54,24 @@ function makeFace(weights)
 	var cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face1"), 0, 0, size, size);
 	var d = cx.getImageData(0,0,size,size);
-	var weight = document.getElementById("f1").value;
 	for (x = 0; x<size; x++) 
 	{
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=parseFloat(weight)*d.data[index];
+			hues[x][y]+=parseFloat(weights[0])*d.data[index];
 		}
 	}
 	var c = document.createElement("canvas");
 	var cx = c.getContext("2d");
 	cx.drawImage(document.getElementById("face2"), 0, 0, size, size);
-	var d = cx.getImageData(0,0,size,size);
-	var weight = document.getElementById("f2").value;
+	var d = cx.getImageData(0,0,size,size);;
 	for (x = 0; x<size; x++) 
 	{
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=parseFloat(weight)*d.data[index];
+			hues[x][y]+=parseFloat(weights[1])*d.data[index];
 		}
 	}
 		var c = document.createElement("canvas");
@@ -85,7 +84,7 @@ function makeFace(weights)
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=parseFloat(weight)*d.data[index];
+			hues[x][y]+=parseFloat(weights[2])*d.data[index];
 		}
 	}
 	var c = document.createElement("canvas");
@@ -98,7 +97,7 @@ function makeFace(weights)
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=parseFloat(weight)*d.data[index];
+			hues[x][y]+=parseFloat(weights[3])*d.data[index];
 		}
 	}
 	var c = document.createElement("canvas");
@@ -111,7 +110,7 @@ function makeFace(weights)
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=parseFloat(weight)*d.data[index];
+			hues[x][y]+=parseFloat(weights[4])*d.data[index];
 		}
 	}
 	var c = document.createElement("canvas");
@@ -124,7 +123,7 @@ function makeFace(weights)
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=parseFloat(weight)*d.data[index];
+			hues[x][y]+=parseFloat(weights[5])*d.data[index];
 		}
 	}
 	var c = document.createElement("canvas");
@@ -137,7 +136,7 @@ function makeFace(weights)
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=parseFloat(weight)*d.data[index];
+			hues[x][y]+=parseFloat(weights[6])*d.data[index];
 		}
 	}
 	var c = document.createElement("canvas");
@@ -150,7 +149,7 @@ function makeFace(weights)
 		for(y = 0; y<size; y++)
 		{
 			index = ((x*(d.width*4)) + (y*4)) + 2;
-			hues[x][y]+=parseFloat(weight)*d.data[index];
+			hues[x][y]+=parseFloat(weights[7])*d.data[index];
 		}
 	}
 	canv = document.createElement("canvas");
