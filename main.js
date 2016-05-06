@@ -24,7 +24,7 @@ function randomWeights()
 	var x;
 	for(x = 0; x<8; x++)
 	{
-		weights[x] = 2 * (random() - 0.5);
+		weights[x] = 2 * (Math.random() - 0.5);
 	}
 	makeFace(weights);	
 }
