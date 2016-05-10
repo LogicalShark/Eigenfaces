@@ -5,6 +5,10 @@ function setPixel(imageData, x, y, h, a) {
     imageData.data[index+2] = h;
     imageData.data[index+3] = a;
 }
+function identify()
+{
+	var weights = [];
+}
 function combine()
 {
 	var weights = [];
